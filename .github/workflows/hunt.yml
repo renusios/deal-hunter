@@ -1,24 +1,36 @@
 name: hunt
+# GitHub's cron is unreliable on free repos (ran 1x in 11h), so each run loops ~5h50m
+# checking every 5 min, then starts the next run itself. Hourly cron restarts the chain if it breaks.
 on:
   schedule:
-    - cron: "*/5 * * * *"   # fastest GitHub allows; runs can lag a few min
+    - cron: "0 * * * *"
   workflow_dispatch:
 permissions:
   contents: write
+  actions: write
 concurrency: hunt
 jobs:
   hunt:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 358
     steps:
       - uses: actions/checkout@v4
-      - run: python hunt.py
+      - name: Check every 5 min
         env:
           TG_TOKEN: ${{ secrets.TG_TOKEN }}
           TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
-      - name: Save seen ads
         run: |
           git config user.name "deal-hunter"
           git config user.email "actions@github.com"
-          git add seen.json
-          git diff --cached --quiet || (git commit -m "update seen" && git push)
+          end=$((SECONDS + 20700))
+          while [ $SECONDS -lt $end ]; do
+            python hunt.py || true
+            git add seen.json
+            git diff --cached --quiet || { git commit -qm "update seen" && git pull -q --rebase && git push -q; } || true
+            sleep 300
+          done
+      - name: Start next run
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run hunt.yml --ref main
