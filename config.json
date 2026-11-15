@@ -17,7 +17,22 @@
     "запчаст",
     "сломан",
     "неисправ",
-    "не включается"
+    "не включается",
+    "nav pārbaudīt",
+    "nav parbaudit",
+    "untested",
+    "не проверял",
+    "без проверки",
+    "kā ir",
+    "как есть",
+    "pārkarst",
+    "перегрев",
+    "nelādē",
+    "nerāda attēlu",
+    "нет изображения",
+    "nelasa disk",
+    "не читает диск",
+    "glitch"
   ],
   "not_repair": [
     "nav bojāt",
@@ -46,73 +61,17 @@
     {
       "name": "Consoles (ss.lv)",
       "url": "https://www.ss.lv/lv/electronics/computers/game-consoles/sell/rss/",
-      "max_price": 100,
-      "max_price_repair": 200,
-      "must_match": [],
-      "site": "ss"
-    },
-    {
-      "name": "Laptops (ss.lv)",
-      "url": "https://www.ss.lv/lv/electronics/computers/noutbooks/sell/rss/",
       "max_price": 0,
-      "max_price_repair": 80,
+      "max_price_repair": 40,
       "must_match": [],
-      "site": "ss"
-    },
-    {
-      "name": "Tablets (ss.lv)",
-      "url": "https://www.ss.lv/lv/electronics/computers/tablets/sell/rss/",
-      "max_price": 0,
-      "max_price_repair": 50,
-      "must_match": [],
-      "site": "ss"
-    },
-    {
-      "name": "Phones (ss.lv)",
-      "url": "https://www.ss.lv/lv/electronics/phones/mobile-phones/sell/rss/",
-      "max_price": 0,
-      "max_price_repair": 60,
-      "must_match": [
-        "iphone",
-        "pixel",
-        "galaxy s"
-      ],
       "site": "ss"
     },
     {
       "name": "Consoles (pp.lv)",
       "url": "https://apipub.pp.lv/lv/api_user/v1/categories/4035/lots",
-      "max_price": 100,
-      "max_price_repair": 200,
-      "must_match": [],
-      "site": "pp"
-    },
-    {
-      "name": "Laptops (pp.lv)",
-      "url": "https://apipub.pp.lv/lv/api_user/v1/categories/4031/lots",
       "max_price": 0,
-      "max_price_repair": 80,
+      "max_price_repair": 40,
       "must_match": [],
-      "site": "pp"
-    },
-    {
-      "name": "Tablets (pp.lv)",
-      "url": "https://apipub.pp.lv/lv/api_user/v1/categories/4033/lots",
-      "max_price": 0,
-      "max_price_repair": 50,
-      "must_match": [],
-      "site": "pp"
-    },
-    {
-      "name": "Phones (pp.lv)",
-      "url": "https://apipub.pp.lv/lv/api_user/v1/categories/3831/lots",
-      "max_price": 0,
-      "max_price_repair": 60,
-      "must_match": [
-        "iphone",
-        "pixel",
-        "galaxy s"
-      ],
       "site": "pp"
     }
   ],
@@ -121,12 +80,48 @@
       "name": "PS4",
       "words": [
         "ps4",
-        "playstation 4",
         "ps 4",
+        "playstation 4",
         "playstation4"
       ],
-      "max_price": 130,
-      "max_price_repair": 200
+      "max_price": 0,
+      "max_price_repair": 60
+    },
+    {
+      "name": "Retro",
+      "words": [
+        "ps2",
+        "ps 2",
+        "playstation 2",
+        "ps1",
+        "playstation 1",
+        "ps one",
+        "psone",
+        "ps3",
+        "ps 3",
+        "playstation 3",
+        "psp",
+        "vita",
+        "xbox 360",
+        "xbox360",
+        "original xbox",
+        "wii",
+        "gamecube",
+        "game cube",
+        "n64",
+        "nintendo 64",
+        "snes",
+        "gameboy",
+        "game boy",
+        "gba",
+        "nintendo ds",
+        "3ds",
+        "dreamcast",
+        "sega",
+        "dendy"
+      ],
+      "max_price": 25,
+      "max_price_repair": 40
     }
   ]
 }
